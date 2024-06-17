@@ -20,8 +20,10 @@ env:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
+    outputs:
+      image_tag: ${{ steps.meta.outputs.tags }}
+    environment: dev
     permissions:
       contents: read
       packages: write
